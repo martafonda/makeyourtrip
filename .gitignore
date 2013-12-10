@@ -17,3 +17,6 @@ public/uploads
 
 # chef deploy
 lib/**/chef/
+
+#Ignore DS_Store
+.DS_Store
