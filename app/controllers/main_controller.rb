@@ -1,2 +1,5 @@
-class MainController < ActionController::Base
+class MainController < ApplicationController
+  def index
+    
+  end
 end

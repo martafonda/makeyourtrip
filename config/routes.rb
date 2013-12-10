@@ -2,10 +2,10 @@ Makeyourtrip::Application.routes.draw do
   get "/signout" => "sessions#destroy", :as => :signout  
 
   devise_for :user, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  devise_scope :user do
-   get 'log_out', :to => 'devise/sessions#destroy', :as => :destroy_user_facebook_session
-   get 'sign_out', :to => 'devise/registrations#cancel', :as => :destroy_user_facebook_registration
-  end
+  # devise_scope :user do
+  #  get 'user/log_out', :to => 'devise/sessions#destroy', :as => :destroy_user_facebook_session
+  #  get 'user/sign_out', :to => 'devise/registrations#cancel', :as => :destroy_user_facebook_registration
+  # end
 
   root "main#index"
 
