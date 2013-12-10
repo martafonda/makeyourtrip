@@ -1,15 +1,11 @@
-<article class="row">
-  <div id="user_nav">
-   <% if user_signed_in? %>
-        <%= render partial: 'user_logged_in' %>
+<header>
+  <% if user_signed_in? %>
+    <%= render partial: 'header_user_logged_in' %>
    <% else %>
-        <%= render partial: 'user_not_logged_in' %>
+    <%= render partial: 'header_user_not_logged_in' %>
    <% end %>
-  </div>
-  <article>
-    <blockquote>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-    </blockquote>
-  </article>
-</article>
+</header>
+
+<section>
+  <%= render partial: 'main_content_landing_page' %>
+</section>
