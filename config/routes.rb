@@ -1,5 +1,14 @@
 Makeyourtrip::Application.routes.draw do
-  devise_for :users
+  get "/signout" => "sessions#destroy", :as => :signout  
+
+  devise_for :user, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_scope :user do
+   get 'log_out', :to => 'devise/sessions#destroy', :as => :destroy_user_facebook_session
+   get 'sign_out', :to => 'devise/registrations#cancel', :as => :destroy_user_facebook_registration
+  end
+
+  root "main#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
