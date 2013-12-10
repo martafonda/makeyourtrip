@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>MakeYourTrip APP - Plan your trip here!!</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
-  <article>
+  <article class="row">
     <div id="user_nav">
      <% if user_signed_in? %>
           <%= render 'user_logged_in' %>
@@ -13,6 +16,12 @@
           <%= render "user_not_logged_in" %>
      <% end %>
     </div>
+    <article>
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+      </blockquote>
+    </article>
   </article>
 </body>
 </html>
