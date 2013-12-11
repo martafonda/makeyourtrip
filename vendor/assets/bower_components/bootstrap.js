@@ -1,1 +1,0 @@
-//= require_directory ./bootstrap/js
