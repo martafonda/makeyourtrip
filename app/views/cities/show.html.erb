@@ -1,0 +1,24 @@
+<article>
+  <ul>
+    <li>
+      <strong>Name:</strong>
+      <%= @city.name %>
+    </li>
+    <li>
+      <strong>Arrival:</strong>
+      <%= @city.arrival %>
+    </li>
+    <li>
+      <strong>Departure:</strong>
+      <%= @city.departure %>
+    </li>
+    <li>
+      <strong>Comment:</strong>
+      <%= @city.comment %>
+    </li>
+  </ul>
+</article>
+<aside>
+  <%= link_to 'Edit city', edit_city_path(@city) %> 
+  <%= link_to 'Back to cities list', cities_path %>
+</aside>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-xs-2 col-md-2 text-center">
+                        <img src="http://bootsnipp.com/apple-touch-icon-114x114-precomposed.png" alt="bootsnipp"
+                            class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-xs-10 col-md-10 section-box">
+                        <h2 class="city-name"><%= city.name %> <span class="glyphicon glyphicon-plus"><%= link_to 'Show', @city %></span></h2>
+                        
+                        <strong>Arrival Date: </strong><p><%= city.arrival %></p>
+                        <strong>Departure Date: </strong><p><%= city.departure %></p>
+                        <strong>Comment:</strong><p><%= city.comment %></p>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
