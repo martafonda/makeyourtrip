@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <header>
+  <header class="row">
     <%= render partial: 'header_user_logged_in' %>
   </header>
   <section>
@@ -10,6 +10,6 @@
     <%= render partial: 'header_user_not_logged_in' %>
   </header>
   <section>
-    <%= render partial: 'main_content_landing_page', locals: {cities: @cities} %>
+    <%= render partial: 'main_content_landing_page' %>
   </section>  
 <% end %>

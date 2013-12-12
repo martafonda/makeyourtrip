@@ -1,27 +1,37 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header ">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MakeYourTrip</a>
+      <a class="navbar-brand" href="#">MakeYourTrip <span class="glyphicon glyphicon-plane"></span> </a>
     </div>
+
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-left">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">Signed in as <%= current_user.email %>. Not you?</a></li>
-        <li><ul class="btn-group btn">
-            <% if session[:fb_token].nil? %>
-              <li><%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "btn btn-danger "%></li>
-            <% else %>
-              <li><%= link_to "Sign out", destroy_user_facebook_registration_path %></li>
-            <% end %>
-          </ul>
-        </li>
+        <li><a href="#">User Profile</a></li>
+        <li><a href="#">Contact</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User <span class="glyphicon glyphicon-user"></span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a><span class="glyphicon glyphicon-user"></span> <%= current_user.name %></a></li>
+                <li><a><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
+                <li class="divider"></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: 'delete'%></li>
+                <li><%= link_to "Sign out", edit_user_registration_path, method: 'delete' %></li>
+            </ul>
+          </li>
       </ul>
     </div><!--/.nav-collapse -->
+
   </div>
 </div>
