@@ -1,18 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MakeYourTrip APP - Plan your trip here!!</title>
-</head>
-<body>
-  <article>
-    <div id="user_nav">
-     <% if user_signed_in? %>
-          <%= render 'user_logged_in' %>
-     <% else %>
-          <%= render "user_not_logged_in" %>
-     <% end %>
-    </div>
-  </article>
-</body>
-</html>
+<header>
+  <% if user_signed_in? %>
+    <%= render partial: 'header_user_logged_in' %>
+   <% else %>
+    <%= render partial: 'header_user_not_logged_in' %>
+   <% end %>
+</header>
+
+<section>
+  <%= render partial: 'main_content_landing_page' %>
+</section>
