@@ -1,0 +1,12 @@
+<%= simple_form_for([@city, @travelticket]) do |f| %>
+  <%= f.input :origin, label: 'Origin' %><br>
+  <%= f.input :destination, label: 'Destination'%><br>
+  <%= f.select :type, Travelticket::TYPE.map { |type| [type.titleize, type]  }, 
+                        label: 'Transportation Type' %>
+  <%= f.input :departure, label: 'Departure',
+                        as: :datetime, start_year: Date.today.year,
+                        end_year: Date.today.year + 3,
+                        order: [:day, :month, :year] %><br>
+  <%= f.input :place, label: 'Place'%><br>
+  <%= f.button :submit %>
+<% end %>
