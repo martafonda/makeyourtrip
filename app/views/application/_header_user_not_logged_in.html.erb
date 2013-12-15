@@ -11,7 +11,8 @@
     </div>
     <div class="collapse navbar-collapse">
       <div class="btn-group pull-right login-top-margin">
-        <li class="btn"><%= link_to " Login", new_user_registration_path, class: "btn btn-primary fa fa-facebook fa-lg"%><i class=""></i></li>
+        <li class="btn"><%= link_to " Login", user_omniauth_authorize_path(:facebook) , class: "btn btn-primary fa fa-facebook"%><br /></li>
+        <li class="btn"><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary"%><br /></li>
         <form class="navbar-form navbar-right" role="form">
           <div class="form-group">
             <input type="text" placeholder="Email" class="form-control">
@@ -25,3 +26,4 @@
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
 </div>
+

@@ -1,0 +1,24 @@
+<article>
+  <ul>
+    <li>
+      <strong>Name:</strong>
+      <%= @place.name %>
+    </li>
+    <li>
+      <strong>Description:</strong>
+      <%= @place.description %>
+    </li>
+    <li>
+      <strong>Address:</strong>
+      <%= @place.address %>
+    </li>
+    <li>
+      <strong>Date and Time:</strong>
+      <%= @place.datetime %>
+    </li>
+  </ul>
+</article>
+<aside>
+  <%= link_to 'Edit place', edit_place_path(@place) %> 
+  <%= link_to 'Back to my cities', cities_path %>
+</aside>

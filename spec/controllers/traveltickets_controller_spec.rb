@@ -146,7 +146,7 @@ describe TravelticketsController do
       }.to change(city.traveltickets, :count).by(-1)
     end
 
-    it "redirects to the movies list" do
+    it "redirects to the traveltickets list" do
       delete :destroy, {
         :city_id => city.to_param, 
         :id => travelticket.to_param

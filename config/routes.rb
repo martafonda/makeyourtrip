@@ -8,6 +8,7 @@ Makeyourtrip::Application.routes.draw do
   # end
   resources :cities do
     resources :traveltickets, shallow: true
+    resources :places, shallow: true
   end
   root "main#index"
 
