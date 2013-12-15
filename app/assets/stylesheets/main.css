@@ -2,6 +2,7 @@
 .logo p{color: rgba(255,255,255,1); font-size: 1.5em;}
 .logo-top-margin{margin-top:15px}
 .login-top-margin{margin-top:2%;}
+.margin-top{margin-top: 4%;}
 .map{margin-bottom: 2%}
 .row-middle{padding: 5%; background-color: rgba(66, 139, 202, 1);color: rgba(255,255,255,1);}
 
@@ -10,5 +11,5 @@
 .social-wrapper a{padding: 3%}
 .main-footer{background-color: rgba(45, 45, 45,1);color: rgba(255,255,255,1);}
 /* Main Page */
-.top-section{margin-top: 60px;}
+.top-section{margin-top: 8em; margin-bottom: 8em;}
 

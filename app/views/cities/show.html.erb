@@ -1,144 +1,15 @@
-<article>
-  <br><br>
-  <div class="container-fluid well span6">
-    <div class="row-fluid">
-      <div class="container">
-          <div class="col-md-4 col-xs-4" >
-            <img src="http://ironhack.com/static/fb-open.png" class="img-circle">
-          </div>
-          
-          <div class="col-md-8 col-xs-8">
-              <h3><%= @city.name %></h3>
-              <h6><strong>Arrival: </strong><%= @city.arrival %></h6>
-              <h6><strong>Departure: </strong><%= @city.departure %></h6>
-              <h6><strong>Comment: </strong><%= @city.comment %></h6>
-              <h6><a href="#">More... </a></h6>
-          </div>
-          
-          <div class="span2">
-              <div class="btn-group">
-                  <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                      Action 
-                      <span class="icon-cog icon-white"></span><span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a href="#"><span class="icon-wrench"></span> Modify</a></li>
-                      <li><a href="#"><span class="icon-trash"></span> Delete</a></li>
-                  </ul>
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-</article>
-<article class="">
-      <div class="container">
-        <div class="row-fluid">
-          <div class="col-md-6 col-xs-6">
-            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&source=s_q&hl=en&geocode=&q=15+Springfield+Way,+Hythe,+CT21+5SH&aq=t&sll=52.8382,-2.327815&sspn=8.047465,13.666992&ie=UTF8&hq=&hnear=15+Springfield+Way,+Hythe+CT21+5SH,+United+Kingdom&t=m&z=14&ll=51.077429,1.121722&output=embed"></iframe>
-          </div>
-          <div class="col-md-6 col-xs-6">
-            <div class="col-md-6 col-xs-6">
-              <h2>Snail mail</h2>
-              <address>
-                <strong>Hythe Window Cleaning</strong><br>
-                15 Springfield Way<br>
-                Hythe<br>
-                Kent<br>
-                United Kingdon<br>
-                CT21 5SH<br>
-                <abbr title="Phone">P:</abbr> 01234 567 890
-              </address>
-            </div>
-            <div class="col-md-6 col-xs-6">
-              <div class="container">
-                <div class="row">
-                  <div class="span12">
-                  <table class="table-condensed table-bordered table-striped">
-                    <thead>
-                    <tr>
-                      <th colspan="7">
-                        <span class="btn-group">
-                            <a class="btn"><i class="icon-chevron-left"></i></a>
-                          <a class="btn active">February 2012</a>
-                          <a class="btn"><i class="icon-chevron-right"></i></a>
-                        </span>
-                      </th>
-                    </tr>
-                    <tr>
-                        <th>Su</th>
-                        <th>Mo</th>
-                        <th>Tu</th>
-                        <th>We</th>
-                        <th>Th</th>
-                        <th>Fr</th>
-                        <th>Sa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="muted">29</td>
-                        <td class="muted">30</td>
-                        <td class="muted">31</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td class="btn-primary"><strong>20</strong></td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td class="muted">1</td>
-                        <td class="muted">2</td>
-                        <td class="muted">3</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-  </div>
-</div>
-
-            </div>
-            <div class="col-md-12 col-xs-12">
-              <blockquote>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
-                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-<aside >
-  <%= link_to 'Edit city', edit_city_path(@city) %> 
-  <%= link_to 'Back to cities list', cities_path %>
-</aside>
+<% if user_signed_in? %>
+  <header class="row">
+    <%= render partial: 'header_user_logged_in' %>
+  </header>
+  <section>
+    <%= render partial: 'show_city_info', locals: {cities: @cities} %>
+  </section>  
+<% else %>
+  <header>
+    <%= render partial: 'header_user_not_logged_in' %>
+  </header>
+  <section>
+    <%= render partial: 'main_content_landing_page' %>
+  </section>  
+<% end %>
