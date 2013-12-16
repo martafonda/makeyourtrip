@@ -10,3 +10,6 @@ lib/**/chef/
 vendor
 node_modules
 .idea
+
+# Compiled assets
+/public/assets
