@@ -1,0 +1,13 @@
+<%= simple_form_for(@city) do |f| %>
+  <%= f.input :name, label: 'City name' %><br>
+  <%= f.input :arrival, label: 'Arrival Date', 
+                        as: :date, start_year: Date.today.year,
+                        end_year: Date.today.year + 3,
+                        order: [:day, :month, :year] %><br>
+  <%= f.input :departure, label: 'Departure Date',
+                        as: :date, start_year: Date.today.year,
+                        end_year: Date.today.year + 3,
+                        order: [:day, :month, :year] %><br>
+  <%= f.input :comment, as: :text %><br>
+  <%= f.button :submit %>
+<% end %>

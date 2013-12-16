@@ -1,0 +1,2 @@
+module TravelticketsHelper
+end

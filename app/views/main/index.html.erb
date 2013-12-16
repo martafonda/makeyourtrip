@@ -1,11 +1,17 @@
-<header>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <header class="row">
     <%= render partial: 'header_user_logged_in' %>
-   <% else %>
+  </header>
+  <section>
+    <%= render partial: 'main_content', locals: {cities: @cities} %>
+  </section>  
+  <%= render partial: 'footer' %>
+<% else %>
+  <header>
     <%= render partial: 'header_user_not_logged_in' %>
-   <% end %>
-</header>
-
-<section>
-  <%= render partial: 'main_content_landing_page' %>
-</section>
+  </header>
+  <section>
+    <%= render partial: 'main_content_landing_page' %>
+  </section>  
+  <%= render partial: 'main_footer' %>
+<% end %>

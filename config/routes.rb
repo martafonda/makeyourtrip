@@ -6,7 +6,10 @@ Makeyourtrip::Application.routes.draw do
   #  get 'user/log_out', :to => 'devise/sessions#destroy', :as => :destroy_user_facebook_session
   #  get 'user/sign_out', :to => 'devise/registrations#cancel', :as => :destroy_user_facebook_registration
   # end
-
+  resources :cities do
+    resources :traveltickets, shallow: true
+    resources :places, shallow: true
+  end
   root "main#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

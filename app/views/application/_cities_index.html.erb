@@ -1,0 +1,22 @@
+<div class="well well-sm">
+    <div class="row">
+        <div class="col-xs-3 col-md-3 text-center">
+            <img src="http://s30.postimg.org/gs1mmn2oh/lanight.jpg"
+                class="img-rounded img-responsive" />
+        </div>
+        <div class="col-lg-8 col-xs-8 col-md-8 section-box">
+            <h2 class="city-name"><%= city.name %></h2>
+            <div class="col-lg-6 col-xs-6 col-md-6">
+                <strong>Arrival Date: </strong><p><%= city.arrival %></p>
+                <strong>Departure Date: </strong><p><%= city.departure %></p>
+            </div>
+            <div class="col-lg-6 col-xs-6 col-md-6">
+                <strong>Comment:</strong><p><%= city.comment %></p>
+            </div>
+            <hr />
+        </div>
+        <div class="col-lg-1 col-xs-1 col-md-1 btn-group">
+            <p><%= link_to '', city_path(city.id) , class: "btn btn-primary pull-rigth fa fa-external-link"%></p>
+        </div>
+    </div>
+</div>

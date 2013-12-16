@@ -1,0 +1,30 @@
+<section class="container">
+  <% @places.each do |place| %>
+  <article>
+    <ul>
+      <li>
+        <strong>Name:</strong>
+        <%= place.name %>
+      </li>
+      <li>
+        <strong>Description:</strong>
+        <%= place.description %>
+      </li>
+      <li>
+        <strong>Address:</strong>
+        <%= place.address %>
+      </li>
+      <li>
+        <strong>Date and Time:</strong>
+        <%= place.datetime %>
+      </li>
+    </ul>
+  </article>
+  <aside>
+    <%= link_to 'Edit place', edit_place_path(place) %> 
+    <%= link_to 'Back to my city', city_path(@city) %>
+    <%= link_to 'Delete place', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </aside>
+  <% end %>
+</section>
+<%= link_to 'New place', new_city_place_path %> 

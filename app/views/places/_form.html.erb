@@ -1,0 +1,10 @@
+<%= simple_form_for([@city, @place]) do |f| %>
+  <%= f.input :name, label: 'Name' %><br>
+  <%= f.input :description, label: 'Description'%><br>
+  <%= f.input :address, label: 'Address'%><br>
+  <%= f.input :datetime, label: 'Date and time',
+                        as: :datetime, start_year: Date.today.year,
+                        end_year: Date.today.year + 3,
+                        order: [:day, :month, :year] %><br>
+  <%= f.button :submit %>
+<% end %>

@@ -64,6 +64,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    font-awesome-less (4.0.2)
+      less-rails (>= 2.4.2)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -110,6 +112,7 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
+    pdfkit (0.5.4)
     pg (0.17.0)
     phantomjs (1.9.2.0)
     polyglot (0.3.3)
@@ -185,6 +188,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    wkhtmltopdf-binary (0.9.9.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -198,12 +202,14 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  font-awesome-less
   jbuilder (~> 1.2)
   jquery-rails
   launchy
   less-rails
   omniauth
   omniauth-facebook
+  pdfkit
   pg
   rails (= 4.0.1)
   rspec-rails (>= 2.14)
@@ -214,3 +220,4 @@ DEPENDENCIES
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
+  wkhtmltopdf-binary

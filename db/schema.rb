@@ -11,10 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209121313) do
+ActiveRecord::Schema.define(version: 20131215161929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.date     "arrival"
+    t.date     "departure"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "places", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "address"
+    t.datetime "datetime"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
+
+  create_table "traveltickets", force: true do |t|
+    t.string   "origin"
+    t.string   "destination"
+    t.string   "type"
+    t.datetime "departure"
+    t.string   "place"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "traveltickets", ["city_id"], name: "index_traveltickets_on_city_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

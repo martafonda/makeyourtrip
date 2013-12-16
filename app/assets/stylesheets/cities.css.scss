@@ -1,0 +1,11 @@
+// Place all the styles related to the cities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.city-name {
+  width: 100%;
+  overflow: ellipsis;
+}
+.city-name span {
+  font-size: 12px;
+  float: right;
+}
