@@ -1,0 +1,7 @@
+<section class="row">
+  <% @city.places.each do |place| %>
+    <article class="travelticket-name">
+      <p><i class="fa fa-map-marker"> </i> <%= place.name %> - <span class="small"><%= place.address %></span> <%= link_to '', place_path(place), class: "fa fa-plus-circle travelticket-name-more" %></p>
+    </article>
+  <% end %>
+</section>

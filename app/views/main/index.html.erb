@@ -5,6 +5,7 @@
   <section>
     <%= render partial: 'main_content', locals: {cities: @cities} %>
   </section>  
+  <%= render partial: 'footer' %>
 <% else %>
   <header>
     <%= render partial: 'header_user_not_logged_in' %>
@@ -12,4 +13,5 @@
   <section>
     <%= render partial: 'main_content_landing_page' %>
   </section>  
+  <%= render partial: 'main_footer' %>
 <% end %>
