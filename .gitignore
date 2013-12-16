@@ -20,3 +20,6 @@ lib/**/chef/
 
 #Ignore DS_Store
 .DS_Store
+
+# Compiled assets
+/public/assets
