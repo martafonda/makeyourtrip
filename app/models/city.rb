@@ -4,4 +4,6 @@ class City < ActiveRecord::Base
 
   has_many :traveltickets , dependent: :destroy
   has_many :places , dependent: :destroy
+  geocoded_by :name
+  after_validation :geocode, :if => :name_changed?
 end

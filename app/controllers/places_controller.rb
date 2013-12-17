@@ -3,6 +3,10 @@ class PlacesController < ApplicationController
   before_action :set_city, except:[:show, :update, :edit]
   def index
     @places = @city.places
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
 
   def show
