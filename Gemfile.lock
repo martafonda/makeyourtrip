@@ -66,6 +66,7 @@ GEM
       multipart-post (~> 1.2.0)
     font-awesome-less (4.0.2)
       less-rails (>= 2.4.2)
+    geocoder (1.1.9)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -203,6 +204,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-less
+  geocoder
   jbuilder (~> 1.2)
   jquery-rails
   launchy

@@ -3,7 +3,7 @@
     <%= render partial: 'header_user_logged_in' %>
   </header>
   <section>
-    <%= render partial: 'show_city_info', locals: {cities: @cities} %>
+    <%= render partial: 'show_city_info', locals: {cities: @cities, places: @places} %>
   </section>  
 <% else %>
   <header>

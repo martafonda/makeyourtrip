@@ -6,6 +6,7 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @places = Place.all
   end
   
   def new
