@@ -1,7 +1,12 @@
 <section class="row">
-  <% @city.places.each do |place| %>
     <article class="travelticket-name">
       <p><i class="fa fa-map-marker"> </i> <%= place.name %> - <span class="small"><%= place.address %></span> <%= link_to '', place_path(place), class: "fa fa-plus-circle travelticket-name-more" %></p>
     </article>
-  <% end %>
 </section>
+<article class="near-points">
+  <ul>
+    <% place.nearbys(5).each do |near_place| %>
+      <li><%= link_to near_place.address, place %> (<%= near_place.distance.round(2) %> miles)</li>
+    <% end %>
+  </ul>
+</article>

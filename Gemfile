@@ -44,6 +44,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -56,8 +59,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "capybara", group: [:development, :test]
-gem "capybara-webkit", group: [:development, :test]
 gem "launchy", group: [:development, :test]
 gem "database_cleaner", group: [:development, :test]
 gem "devise"
