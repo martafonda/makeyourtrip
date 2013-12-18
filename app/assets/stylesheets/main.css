@@ -1,7 +1,11 @@
+.text-justified{text-align: justify;}
+.img-center{}
 /* Landing Page */
 .logo p{color: rgba(255,255,255,1); font-size: 1.5em;}
 .logo-top-margin{margin-top:15px}
-.login-top-margin{margin-top:2%;}
+.login-top-margin{margin-top:1%;}
+  .login-top-margin ul{margin-top:0.75%;}
+  .login-top-margin {}
 .margin-top{margin-top: 4%;}
 .margin-bottom{margin-bottom: 4%;}
 .map{margin-bottom: 2%}
@@ -9,6 +13,7 @@
 
 .row-header{padding: 5%;}
 .row-end{padding: 5%; background-color: rgba(88, 88, 88, 1);}
+  .img-container img{border: solid 2px white;}
 .social-wrapper a{padding: 3%}
 .main-footer{background-color: rgba(45, 45, 45,1);color: rgba(255,255,255,1);}
 /* Main Page */
@@ -24,3 +29,8 @@
 
 /* Places */
 .near-points a{color: rgba(63,63,63,1);}
+
+.simple_form div.input {
+  margin-bottom: 40px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}

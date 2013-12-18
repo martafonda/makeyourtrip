@@ -21,7 +21,7 @@
     <li class="active"><a href="#"><i class="glyphicon glyphicon-user"></i> Members</a></li>
         <li class="divider"></li>
     <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Settings</a></li>
-    <li><a href="#"><i class="glyphicon glyphicon-share"></i> Logout</a></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: 'delete', class: "fa fa-sign-out"%></li>
   </ul>
 
 
