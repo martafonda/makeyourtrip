@@ -3,9 +3,9 @@
     <aside class="col-md-3 well well-sm">
       <%= render partial: "aside_main" %>
     </aside>
-    <div class="col-md-9">
+    <article class="col-md-9">
       <%= render partial: "cities_index" , collection: cities, as: :city %>
-    </div>
+    </article>
   </article>
   <article class="btn btn-group row pull-right">
     <%= link_to ' New city', new_city_path, class: "btn btn-primary fa fa-plus "%>

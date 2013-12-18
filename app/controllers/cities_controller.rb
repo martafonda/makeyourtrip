@@ -6,6 +6,11 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @places = @city.places
+    @hash = Gmaps4rails.build_markers(@places) do |place, marker|
+      marker.lat place.latitude
+      marker.lng place.longitude
+    end
   end
   
   def new
@@ -42,6 +47,6 @@ class CitiesController < ApplicationController
     @city = City.find(params[:city_id] || params[:id])
   end
   def city_params
-    params.require(:city).permit(:name, :arrival, :departure, :comment)
+    params.require(:city).permit(:name, :arrival, :departure, :comment, :latitude, :longitude)
   end
 end
