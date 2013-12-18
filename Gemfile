@@ -59,8 +59,6 @@ gem 'underscore-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "capybara", group: [:development, :test]
-gem "capybara-webkit", group: [:development, :test]
 gem "launchy", group: [:development, :test]
 gem "database_cleaner", group: [:development, :test]
 gem "devise"
