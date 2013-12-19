@@ -1,3 +1,9 @@
-<h1>New Place</h1>
-<%= render 'form' %>
-<%= link_to 'Back to my City', city_path(@city) %>
+<%= render partial: 'header_user_logged_in' %>
+<article class="container margin-top margin-bottom">
+  <div class="col-md-5 col-md-offset-4">
+    <h1>New Place</h1>
+    <%= render 'form' %>
+    <%= link_to 'Back to my City', city_path(@city) %>
+  </div>
+</article>
+<%= render partial: 'footer' %>

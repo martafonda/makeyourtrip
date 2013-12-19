@@ -1,30 +1,36 @@
-<section class="container">
-  <% @cities.each do |city| %>
-  <article>
-    <ul>
-      <li>
-        <strong>Name:</strong>
-        <%= city.name %>
-      </li>
-      <li>
-        <strong>Arrival:</strong>
-        <%= city.arrival %>
-      </li>
-      <li>
-        <strong>Departure:</strong>
-        <%= city.departure %>
-      </li>
-      <li>
-        <strong>Comment:</strong>
-        <%= city.comment %>
-      </li>
-    </ul>
-  </article>
-  <aside>
-    <%= link_to 'Edit city', edit_city_path(city) %> 
-    <%= link_to 'Back to cities list', cities_path %>
-    <%= link_to 'Delete city', city, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </aside>
-  <% end %>
-</section>
-<%= link_to 'New city', new_city_path %> 
+<%= render partial: 'header_user_logged_in' %>
+<article class="container margin-top">
+  <div class="col-md-5 col-md-offset-4">
+    <% @cities.each do |city| %>
+    <article class="col-md-12 well">
+      <ul>
+        <li>
+          <strong>Name:</strong>
+          <%= city.name %>
+        </li>
+        <li>
+          <strong>Arrival:</strong>
+          <%= city.arrival %>
+        </li>
+        <li>
+          <strong>Departure:</strong>
+          <%= city.departure %>
+        </li>
+        <li>
+          <strong>Comment:</strong>
+          <%= city.comment %>
+        </li>
+      </ul>
+    </article>
+    <aside class="col-md-12 text-center margin-bottom">
+      <%= link_to 'Edit city', edit_city_path(city) %> |
+      <%= link_to 'Back to cities list', cities_path %> |
+      <%= link_to 'Delete city', city, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </aside>
+    <% end %>
+  </div>
+</article>
+<article class="col-md-12 text-center margin-bottom">
+  <%= link_to 'New city', new_city_path, class: "btn btn-primary" %> 
+</article>
+<%= render partial: 'footer' %>

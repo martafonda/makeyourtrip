@@ -1,11 +1,13 @@
 <section class="row">
   <% @city.traveltickets.each do |travelticket| %>
     <article class="travelticket-name">
-      <div class="col-md-8">
-        <p><i class="fa fa-globe"> </i> <%= travelticket.origin %> - <%= travelticket.destination %> <span class="small"><%= travelticket.departure %></span></p>
+      <div class="col-md-8 col-md-offset-1">
+        <p><i class="fa fa-globe"> </i> <strong> <%= travelticket.origin %> - <%= travelticket.destination %> </strong> <i class="fa fa-arrow-right"> </i> <span class="small"><%= travelticket.departure %></span> in <%= travelticket.place %>
+
+        </p>
       </div>
       <div class="col-md-3">
-        <%= link_to 'MORE', travelticket_path(travelticket), class: "travelticket-name-more" %>
+        <%= link_to ' MORE INFO', travelticket_path(travelticket), class: "travelticket-name-more fa fa-plus-square" %>
       </div>
     </article>
   <% end %>

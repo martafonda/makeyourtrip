@@ -2,16 +2,12 @@
   <header class="row">
     <%= render partial: 'header_user_logged_in' %>
   </header>
-  <section>
-    <%= render partial: 'main_content', locals: {cities: @cities} %>
-  </section>  
+  <%= render partial: 'main_content', locals: {cities: @cities} %>
   <%= render partial: 'footer' %>
 <% else %>
   <header>
     <%= render partial: 'header_user_not_logged_in' %>
   </header>
-  <section>
-    <%= render partial: 'main_content_landing_page' %>
-  </section>  
+  <%= render partial: 'main_content_landing_page' %>
   <%= render partial: 'main_footer' %>
 <% end %>

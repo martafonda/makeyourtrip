@@ -1,12 +1,19 @@
 <section class="row">
     <article class="travelticket-name">
-      <p><i class="fa fa-map-marker"> </i> <%= place.name %> - <span class="small"><%= place.address %></span> <%= link_to '', place_path(place), class: "fa fa-plus-circle travelticket-name-more" %></p>
+      <p><i class="fa fa-map-marker"> </i> <%= place.name %> - <span class="small"><%= place.address %> </span><span class="small label label-info" href="#"> NEAR? </span></p>
+      <article class="near-points" style="">
+        <ul>
+          <% place.nearbys(10).each do |near_place| %>
+            <li><%= link_to near_place.address, place %> (<%= near_place.distance.round(2) %> miles)</li>
+          <% end %>
+        </ul>
+      </article>
     </article>
 </section>
-<article class="near-points">
-  <ul>
-    <% place.nearbys(5).each do |near_place| %>
-      <li><%= link_to near_place.address, place %> (<%= near_place.distance.round(2) %> miles)</li>
-    <% end %>
-  </ul>
-</article>
+
+<script type="text/javascript">
+    $('.travelticket-name .label-info').on('click', function(){
+      $('.near-points').hide();
+      $(this).parent().siblings('article').show();
+    });
+</script>

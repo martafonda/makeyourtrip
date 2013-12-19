@@ -8,12 +8,14 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <ul class="nav navbar-nav">
+ <!-- <ul class="nav navbar-nav">
     <div class="btn btn-group">
-      <li><%= link_to "Sign up", new_registration_path(resource_name),
-         class: "btn btn-info" %><br /></li>
+      <li>-->
+<!--       <%= link_to "Sign up", new_registration_path(resource_name),
+         class: "btn btn-info" %> -->
+         <!--<br /></li>
     </div>
-  </ul>
+  </ul>-->
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
@@ -43,7 +45,7 @@
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
+  <%- User.omniauth_providers.each do |provider| %>
     <ul class="nav navbar-nav">
       <div class="btn btn-group">
         <li><%= link_to " Login", omniauth_authorize_path(resource_name, provider) ,

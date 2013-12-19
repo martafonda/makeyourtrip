@@ -1,4 +1,9 @@
-<h1>Editing city</h1>
-<%= render 'form' %>
-<%= link_to 'Show', @city %> |
-<%= link_to 'Back', cities_path %>
+<%= render partial: 'header_user_logged_in' %>
+<article class="container margin-top">
+  <div class="col-md-5 col-md-offset-4">
+    <h1>Editing city</h1>
+    <%= render 'form' %>
+    <%= link_to 'Back to my City', @city %>
+  </div>
+</article>
+<%= render partial: 'footer' %>

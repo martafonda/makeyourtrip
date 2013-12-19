@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
   def create
     @place = @city.places.build(place_params)
     if @place.save
-      redirect_to @place
+      redirect_to @city
     else
       render :new
     end

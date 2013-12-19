@@ -1,5 +1,5 @@
 <section class="row">
-  <div class="row well">
+  <div class="well">
     <div class="container margin-top">
       <div class="col-md-3">
         <img src="http://s30.postimg.org/gs1mmn2oh/lanight.jpg"
@@ -25,33 +25,31 @@
     </div>
   </div>
 
-  <article class="row margin-bottom margin-top">
+  <article class="margin-bottom margin-top">
     <div class="container">
-      <div class="col-md-10">
+      <div class="col-md-8">
         <%= render partial: "city_map", locals: {city: @city, hash: @hash } %>
       </div>
-      <div class="col-md-2 btn-group">
-        <%= link_to 'Add place', new_city_place_path(@city), class: "fa fa-plus btn btn-info"%>
-      </div>
-    </div>
-  </article>
 
-  <article class="row row-middle">
-    <div class="container">
-      <div class="col-md-7">
-        <h3>My travel tickets</h3>
-        <%= render partial: 'traveltickets_show', locals: {traveltickets: @traveltickets} %>
+      <div class="col-md-4 btn-group margin-bottom">
+        <%= link_to ' Add Place', new_city_place_path(@city), class: "fa fa-plus btn btn-info"%>
       </div>
-      <div class="col-md-5">
-        <h3>My Favourite Places</h3>
+
+      <div class="col-md-4 places-display">
+        <h4>My Favourite Places</h4>
+        <hr>
         <%= render partial: 'places_show', collection: @city.places, as: :place, locals: { city: @city} %>
       </div>
     </div>
   </article>
 
-  <footer class="row">
-      <%= render partial: 'footer'%>
-  </footer>
+  <article class="container row-middle margin-bottom">
+    <div class="col-md-8 col-md-offset-1">
+      <h3>My travel tickets <i class="fa fa-plane"></i></h3>
+      </div>
+    <%= render partial: 'traveltickets_show', locals: {traveltickets: @traveltickets} %>
+  </article>
+  <%= render partial: 'footer'%>
 
 </section>
 
